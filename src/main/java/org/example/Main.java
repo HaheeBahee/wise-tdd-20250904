@@ -1,18 +1,26 @@
 package org.example;
 
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        experiment1();
+
+    }
+
+    public static void experiment1(){
+        String input = """
+                등록
+                너 자신을 알라
+                """;
+        Scanner sc = new Scanner(input);
+        String cmd = sc.nextLine();
+        String saying = sc.nextLine();
+        System.out.println("입력한 명령어: " + cmd);
+        System.out.println("입력한 명언: " + saying);
     }
 }
+
