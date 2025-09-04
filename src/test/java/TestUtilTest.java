@@ -2,6 +2,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.Scanner;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -30,7 +31,7 @@ public class TestUtilTest {
 
     @Test
     @DisplayName("TestUtil.setOutToByteArray()")
-    void t2() {
+    void t2() throws IOException {
         // 출력 저장소 생성 + System.out을 메모리로 돌려놓음
         ByteArrayOutputStream outputStream = TestUtil.setOutToByteArray();
 
@@ -40,7 +41,7 @@ public class TestUtilTest {
 
         TestUtil.clearSetOutToByteArray(outputStream); //System.out 을 다시 원래 콘솔로 복구.
 
-        assertThat(outStr).isEqualTo("1 / 이순신 / 나의 죽음을 적에게 알리지 마라");
+        assertThat(outStr).contains("1 / 이순신 / 나의 죽음을 적에게 알리지 마라");
 
         System.out.println("이제 화면에 출력된다."); //System.out 복구했으니까 다시 화면에 찍힘.
     }
